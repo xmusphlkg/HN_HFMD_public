@@ -1,0 +1,8 @@
+run_id,validation_scope,validation_model,test_year,training_start_year,training_end_year,observed_total_cases,predicted_total_cases,total_case_log_score,typing_log_score,joint_log_score
+20260717T164500Z-29360ea1-public-v1,synthetic_validation,trailing_mean_and_pooled_share_not_formal_model,2019,2012,2018,787994,865488.714286,-3585.54347554,-4192.89336165,-7778.4368372
+20260717T164500Z-29360ea1-public-v1,synthetic_validation,trailing_mean_and_pooled_share_not_formal_model,2020,2012,2019,766935,855801.875,-4790.23690829,-5608.84512676,-10399.082035
+20260717T164500Z-29360ea1-public-v1,synthetic_validation,trailing_mean_and_pooled_share_not_formal_model,2021,2012,2020,755995,845927.777778,-4967.21288252,-6310.17536453,-11277.3882471
+20260717T164500Z-29360ea1-public-v1,synthetic_validation,trailing_mean_and_pooled_share_not_formal_model,2022,2012,2021,748179,836934.5,-4889.65402042,-6375.84038345,-11265.4944039
+20260717T164500Z-29360ea1-public-v1,synthetic_validation,trailing_mean_and_pooled_share_not_formal_model,2023,2012,2022,745531,828865.818182,-4344.86577675,-5887.19232595,-10232.0581027
+20260717T164500Z-29360ea1-public-v1,synthetic_validation,trailing_mean_and_pooled_share_not_formal_model,2024,2012,2023,742453,821921.25,-3979.58072819,-5255.36291984,-9234.94364804
+20260717T164500Z-29360ea1-public-v1,synthetic_validation,trailing_mean_and_pooled_share_not_formal_model,2025,2012,2024,742736,815808.307692,-3382.57155003,-4661.12276868,-8043.69431871

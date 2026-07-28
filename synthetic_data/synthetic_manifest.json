@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "bytes": 214,
+      "path": "DATA_DICTIONARY.md",
+      "sha256": "033e6991587c31f8018119c7f07d923de678be352d26b6b4114c5b2b03ba1dba"
+    },
+    {
+      "bytes": 124,
+      "path": "DATA_LICENSE.txt",
+      "sha256": "98808348e420a41147d826d0081c70b56cb0005f78f00d558fd9320c540040e1"
+    },
+    {
+      "bytes": 205,
+      "path": "README.md",
+      "sha256": "f68a93fc4c49ba81c998e3d90a65c3edfdb7d245057348501dee057a2ba60ced"
+    },
+    {
+      "bytes": 619,
+      "path": "contact_matrix.csv",
+      "sha256": "a6907bb918f1495bafdf6d11b1e541285abe70ea9814baf08e67fba4cb6f79be"
+    },
+    {
+      "bytes": 235,
+      "path": "region_metadata.csv",
+      "sha256": "d1dba32f4deda6c7893692007ae270ddd50f69ba3b6858929fec0ae4421ada95"
+    },
+    {
+      "bytes": 16190746,
+      "path": "typing_selection.csv",
+      "sha256": "02d92b21d97aee5b20212757f9c94614c62be704002194c5e1ef4d566e62690e"
+    },
+    {
+      "bytes": 11196982,
+      "path": "weekly_surveillance.csv",
+      "sha256": "e72a9f8729efe9764ca5d65f02b466c809b57997b097df910ff2d59b3895a68c"
+    }
+  ],
+  "generator": "hfmd.data.synthetic",
+  "generator_version": "1.0.0",
+  "profile": "synthetic",
+  "provenance": "fully_synthetic_not_derived_from_restricted_cells",
+  "schema_version": 1,
+  "seed": 20260714,
+  "shape": {
+    "regions": 8,
+    "start_year": 2012,
+    "weeks_per_year": 52,
+    "years": 14
+  }
+}

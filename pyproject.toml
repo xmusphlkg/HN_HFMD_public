@@ -1,0 +1,88 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hunan-hfmd"
+version = "0.1.0"
+description = "Auditable multiscale EV-A71 vaccination and HFMD research platform"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+license = "BSD-3-Clause"
+authors = [{ name = "Hunan HFMD study team" }]
+dependencies = [
+  "jinja2>=3.1,<4",
+  "pydantic>=2.10,<3",
+  "PyYAML>=6.0,<7",
+  "typer>=0.15,<1",
+]
+
+[project.optional-dependencies]
+analysis = [
+  "numpy==2.5.1",
+  "pandas==3.0.3",
+  "patsy==1.0.2",
+  "scikit-learn==1.9.0",
+  "scipy==1.18.0",
+  "statsmodels==0.14.6",
+]
+cleaning = [
+  "numpy==2.5.1",
+  "openpyxl==3.1.5",
+  "pandas==3.0.3",
+  "pyshp==3.1.4",
+  "xlrd==2.0.2",
+]
+geo = [
+  "cdsapi==0.7.7",
+  "exactextract==0.3.0",
+  "geopandas==1.1.4",
+  "netCDF4==1.7.4",
+  "numpy==2.5.1",
+  "pandas==3.0.3",
+  "pyproj==3.7.2",
+  "rasterio==1.5.0",
+  "scipy==1.18.0",
+  "shapely==2.1.2",
+  "xarray==2026.7.0",
+]
+workflow = ["snakemake==9.23.1"]
+dev = [
+  "coverage[toml]>=7.6,<8",
+  "mypy>=1.14,<2",
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.9,<1",
+  "uv==0.11.29",
+]
+
+[project.scripts]
+hfmd = "hfmd.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hfmd"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["hfmd"]
+
+[tool.coverage.report]
+fail_under = 75
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+packages = ["hfmd"]

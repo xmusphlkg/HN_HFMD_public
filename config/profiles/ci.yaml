@@ -1,0 +1,10 @@
+runtime:
+  profile: ci
+  cores: 2
+  memory_gb: 4
+  random_seed: 20260714
+  conditional_bootstrap: 4
+  full_state_bootstrap: 2
+  full_state_bootstrap_max: 4
+  optimisation_starts: 1
+  formal: false

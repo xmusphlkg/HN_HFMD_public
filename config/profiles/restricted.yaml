@@ -1,0 +1,10 @@
+runtime:
+  profile: restricted
+  cores: 12
+  memory_gb: 24
+  random_seed: 20260714
+  conditional_bootstrap: 2000
+  full_state_bootstrap: 500
+  full_state_bootstrap_max: 2000
+  optimisation_starts: 4
+  formal: true

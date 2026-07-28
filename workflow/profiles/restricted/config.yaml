@@ -1,0 +1,12 @@
+cores: 12
+jobs: 12
+configfile: workflow/config/restricted.yaml
+latency-wait: 60
+rerun-incomplete: true
+keep-going: false
+printshellcmds: true
+show-failed-logs: true
+default-resources:
+  mem_mb: 4096
+resources:
+  mem_mb: 24576

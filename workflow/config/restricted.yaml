@@ -1,0 +1,11 @@
+profile: restricted
+run_id: 20000101T000000Z-00000000-restricted
+targets:
+  - all
+python_runner: uv run --locked python
+r_runner: Rscript
+require_r: true
+require_pandoc: true
+figures_mem_mb: 4096
+manuscript_mem_mb: 4096
+submission_mem_mb: 4096

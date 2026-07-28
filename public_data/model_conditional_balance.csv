@@ -1,0 +1,7 @@
+Public-health estimand,Point estimate,Conditional 95% interval,Observation-anchored median (central 95% empirical range),Interpretation
+EV-A71 reported-case-proxy reduction,"25,259","24,484–26,403","35,475 (24,777–52,431)",Modelled target-pathogen reduction
+CV-A16 reported-case-proxy increase,"15,967","14,569–17,263","16,464 (9,402–19,872)",Modelled direction-specific non-target increase
+Other-enterovirus reported-case-proxy increase,0,Not applicable,Not applicable,Structural zero because the selected model contains no EV-A71-to-other-enterovirus pathway
+Net all-pathogen reported-case-proxy reduction,"9,292","8,228–10,549","19,387 (9,374–35,943)",Modelled net balance after the aggregate non-EV increase
+EV-A71 reduction retained,36.8%,32.6–41.6%,54.4% (35.4–74.9%),Net reduction divided by the EV-A71 reduction
+CV-A16 increase contribution below age six,93.8%,93.50–95.45%,100.51% (92.50–145.49%),Signed under-six contribution ratio

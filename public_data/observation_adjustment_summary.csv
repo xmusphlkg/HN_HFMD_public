@@ -1,0 +1,12 @@
+metric,value,unit,description
+complete_week_reported_cases,1915678,reports,Reports in the 834 complete province-wide surveillance weeks
+reports_with_resolvable_final_pathogen_label,93844,reports,Reports carrying a resolvable final nucleic-acid pathogen label
+overall_resolvable_label_fraction,4.90,percent,Resolvable-label reports divided by complete-week reports
+annual_resolvable_label_fraction_range,2.82–11.10,percent,Minimum and maximum annual resolvable-label fraction
+median_fitted_label_probability,3.20,percent,Median fitted probability of a resolvable final pathogen label
+reports_in_cells_below_probability_0_05,70.7,percent,Reported-case burden in observation cells with fitted probability below 0.05
+stabilized_weight_truncation_limits,0.078–4.559,ratio,Lower and upper limits applied to stabilized selection weights
+resolved_records_affected_by_weight_truncation,2.00,percent,Resolved-label records whose stabilized weights were truncated
+effective_labelled_sample_size,52160,reports,Inverse-probability-weighted effective labelled sample size
+effective_sample_fraction,55.6,percent,Effective labelled sample size divided by resolvable-label reports
+observation_model_optimization,Converged,status,Optimization status of the one-stage label-resolution model

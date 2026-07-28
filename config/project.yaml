@@ -1,0 +1,115 @@
+schema_version: "1.0"
+
+study:
+  id: hunan_hfmd
+  title: >-
+    Multiscale ecological effects of EV-A71 vaccination on target-pathogen
+    burden, pathogen replacement and age distribution in Hunan, China
+  jurisdiction: Hunan, China
+  surveillance:
+    start: 2010-01-04
+    end: 2025-12-22
+  fitting:
+    start: 2012-01-02
+    end: 2025-12-22
+  vaccine_rollout: 2016-01-01
+  age_groups:
+    - {id: lt1, label: "<1 year", min_years: 0, max_years: 1}
+    - {id: age1_2, label: "1–2 years", min_years: 1, max_years: 3}
+    - {id: age3_5, label: "3–5 years", min_years: 3, max_years: 6}
+    - {id: age6_14, label: "6–14 years", min_years: 6, max_years: 15}
+    - {id: age15plus, label: "≥15 years", min_years: 15, max_years: null}
+  pathogen_groups:
+    - id: ev_a71
+      label: EV-A71
+      aliases: [EV_A71, EV71, Enterovirus A71]
+    - id: cv_a16
+      label: CV-A16
+      aliases: [CV_A16, CA16, Coxsackievirus A16]
+    - id: other_enterovirus
+      label: Other enteroviruses
+      aliases: [other_enterovirus, Other EV]
+
+paths:
+  raw_data: Data
+  restricted_data: AnalysisData/restricted
+  analysis_data: AnalysisData
+  runs: .runs
+  current: artifacts/current
+  distribution: dist
+
+environment:
+  python: 3.13.5
+  r: 4.5.0
+  timezone: UTC
+  locale: C.UTF-8
+  blas_threads: 1
+  font: DejaVu Sans
+
+# Profile files replace this complete runtime block for CI, synthetic, or
+# restricted execution. These defaults are safe for local synthetic work.
+runtime:
+  profile: synthetic
+  cores: 4
+  memory_gb: 12
+  random_seed: 20260714
+  conditional_bootstrap: 50
+  full_state_bootstrap: 20
+  full_state_bootstrap_max: 100
+  optimisation_starts: 2
+  formal: false
+
+contracts:
+  model_registry: model_registry.yaml
+  science_gates: science_gates.yaml
+  visual_contract: visual_contract.yaml
+
+artifacts:
+  - {id: environment_receipt, stage: data, path: receipts/environment.json, public: false}
+  - {id: data_receipt, stage: data, path: receipts/data.json, public: false}
+  - {id: ecological_receipt, stage: ecological, path: receipts/ecological.json, public: false}
+  - {id: dynamics_receipt, stage: dynamics, path: receipts/dynamics.json, public: false}
+  - {id: figures_receipt, stage: figures, path: receipts/figures.json, public: false}
+  - {id: manuscript_receipt, stage: manuscript, path: receipts/manuscript.json, public: false}
+  - {id: submission_receipt, stage: submission, path: receipts/submission.json, public: false}
+  - {id: figure_1, stage: figures, path: figures/main/figure1_ecological_atlas.pdf, public: true}
+  - {id: figure_2, stage: figures, path: figures/main/figure2_county_ecological_effects.pdf, public: true}
+  - {id: figure_3, stage: figures, path: figures/main/figure3_community_balance.pdf, public: true}
+  - {id: figure_4, stage: figures, path: figures/main/figure4_age_ecology.pdf, public: true}
+  - {id: figure_5, stage: figures, path: figures/main/figure5_evidence_boundaries.pdf, public: true}
+  - {id: figure_s1, stage: figures, path: figures/supplementary/figureS1_analytic_workflow.pdf, public: true}
+  - {id: figure_s2, stage: figures, path: figures/supplementary/figureS2_annual_model_fit.pdf, public: true}
+  - {id: figure_s3, stage: figures, path: figures/supplementary/figureS3_contact_matrix.pdf, public: true}
+  - {id: figure_s4, stage: figures, path: figures/supplementary/figureS4_vaccine_proxy.pdf, public: true}
+  - {id: figure_s5, stage: figures, path: figures/supplementary/figureS5_bootstrap_estimands.pdf, public: true}
+  - {id: figure_s6, stage: figures, path: figures/supplementary/figureS6_pathogen_phenology.pdf, public: true}
+  - {id: figure_s7, stage: figures, path: figures/supplementary/figureS7_typing_diagnostics.pdf, public: true}
+  - {id: figure_s8, stage: figures, path: figures/supplementary/figureS8_ecological_diagnostics.pdf, public: true}
+  - {id: figure_s9, stage: figures, path: figures/supplementary/figureS9_pathogen_pair_structures.pdf, public: true}
+  - {id: figure_s10, stage: figures, path: figures/supplementary/figureS10_mechanism_recovery.pdf, public: true}
+  - {id: claims_registry, stage: manuscript, path: reporting/claims.json, public: true}
+  - {id: claims_occurrences, stage: manuscript, path: reporting/claim_occurrences.json, public: true}
+  - {id: manuscript_markdown, stage: manuscript, path: manuscript/manuscript.md, public: true}
+  - {id: manuscript_tex, stage: manuscript, path: manuscript/manuscript.tex, public: true}
+  - {id: manuscript_docx, stage: manuscript, path: manuscript/manuscript.docx, public: true}
+  - {id: supplementary_markdown, stage: manuscript, path: manuscript/supplementary.md, public: true}
+  - {id: supplementary_tex, stage: manuscript, path: manuscript/supplementary.tex, public: true}
+  - {id: supplementary_docx, stage: manuscript, path: manuscript/supplementary.docx, public: true}
+  - {id: submission_manuscript, stage: submission, path: submission/manuscript.docx, public: true}
+  - {id: submission_supplementary, stage: submission, path: submission/supplementary.docx, public: true}
+  - {id: submission_title_page, stage: submission, path: submission/title_page.docx, public: true}
+  - {id: submission_cover_letter, stage: submission, path: submission/cover_letter.docx, public: true}
+  - {id: graphical_abstract_svg, stage: submission, path: submission/graphical_abstract/graphical_abstract.svg, public: true}
+  - {id: graphical_abstract_pdf, stage: submission, path: submission/graphical_abstract/graphical_abstract.pdf, public: true}
+  - {id: record_checklist, stage: submission, path: submission/RECORD.docx, public: true}
+  - {id: strobe_checklist, stage: submission, path: submission/STROBE.docx, public: true}
+  - {id: credit_statement, stage: submission, path: submission/CRediT.docx, public: true}
+  - {id: submission_highlights, stage: submission, path: submission/highlights.txt, public: true}
+  - {id: submission_declarations, stage: submission, path: submission/declarations.md, public: true}
+  - {id: submission_metadata, stage: submission, path: submission/submission_metadata.json, public: true}
+  - {id: submission_manifest, stage: submission, path: submission/submission_manifest.json, public: true}
+
+privacy:
+  small_cell_threshold: 10
+  forbidden_granularities: [event, county, exact_date]
+  public_regions_are_synthetic: true

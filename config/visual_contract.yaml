@@ -1,0 +1,286 @@
+schema_version: "1.0.0"
+backend: R
+font_family: DejaVu Sans
+palette:
+  navy: "#123B4A"
+  teal: "#2A9D8F"
+  pale_teal: "#8CCBC2"
+  cream: "#E9D8A6"
+  orange: "#E57C23"
+  red: "#C65353"
+  blue: "#4C78A8"
+  ink: "#20272B"
+  mid: "#737B80"
+  light: "#D8DDDE"
+  faint: "#F2F3F2"
+semantic_colours:
+  EV_A71: orange
+  CV_A16: teal
+  other_enterovirus: navy
+  factual_or_observed: ink
+  no_vaccine: orange
+  one_step_prediction: teal
+  recursive_prediction: red
+  conditional_interval: cream
+layout_rules:
+  - Preserve the existing hero-panel hierarchy and figure-specific patchwork proportions.
+  - Preserve the legacy panel order when a legacy_design_source is declared.
+  - Use orange, teal, and navy only with their registered pathogen semantics.
+  - Read numerical values only from run-scoped figure-data contracts carrying run_id.
+  - Never read legacy caches or embed manuscript numbers in plotting code.
+  - Draw and assemble all plots in R using ggplot2 and patchwork.
+  - Draw the graphical abstract as R or vector code; generative imagery is prohibited.
+audit_requirements:
+  - panel_value_audit
+  - exact_width_height_audit
+  - embedded_DejaVu_Sans_audit
+  - palette_semantics_audit
+  - legend_semantics_audit
+  - run_id_and_parent_manifest_audit
+  - fixed_container_perceptual_diff_against_design_reference
+
+main_figures:
+  - figure_id: figure1
+    order: 1
+    title: Surveillance ecological atlas
+    conclusion: Long-term burden and pathogen replacement must be read together with age-specific typing effort and ecological vaccine exposure.
+    evidence_logic:
+      - Establish weekly reported burden and its typed versus untyped composition.
+      - Show reconstructed pathogen-group burden without treating it as directly observed incidence.
+      - Locate typing intensity, age structure, vaccine exposure, and EV-A71 distribution on the same timeline.
+    archetype: longitudinal_surveillance_atlas_with_full_width_hero
+    reviewer_risk: Reconstructed pathogen series and ecological exposure could be mistaken for observed pathogen incidence or individual vaccination.
+    source_script: Script_r/figures/figure1_ecological_atlas.R
+    output_name: figure1_ecological_atlas
+    legacy_design_source: figure1
+    width_in: 7.2
+    height_in: 8.0
+    panels: [a, b, c, d, e, f]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figure2
+    order: 2
+    title: County ecological effects and specification stability
+    conclusion: County-level associations across total burden, outbreaks, age composition, and typed pathogen composition are displayed with their prespecified robustness envelope.
+    evidence_logic:
+      - Lead with primary county-level estimands on their native effect scales.
+      - Separate total-burden and outbreak outcomes from composition outcomes.
+      - Show direction and uncertainty across declared model groups without vote counting by significance.
+      - Make ecological, denominator, weather, and typing-selection limitations visible.
+    archetype: effect_forest_with_specification_stability_matrix
+    reviewer_risk: Heterogeneous ecological estimands must not be combined as a single causal vaccine effect.
+    source_script: Script_r/figures/figure2_county_ecological_effects.R
+    output_name: figure2_county_ecological_effects
+    width_in: 7.2
+    height_in: 6.3
+    panels: [a, b, c, d, e]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: required
+  - figure_id: figure3
+    order: 3
+    title: Community balance under vaccination
+    conclusion: Model-defined absolute EV-A71 benefit and non-EV-A71 excess are compared on a common signed scale with uncertainty and mechanism knockouts.
+    evidence_logic:
+      - Contrast factual and no-vaccine weekly reported-case proxies around zero.
+      - Aggregate annual and cumulative community balance.
+      - Quantify uncertainty in release per EV-A71 cases averted.
+      - Test whether the contrast disappears when the fitted interaction channel is removed.
+    archetype: signed_balance_ledger_with_weekly_hero
+    reviewer_risk: All counterfactual contrasts are model conditional and do not constitute a natural experiment.
+    source_script: Script_r/figures/figure2_community_balance.R
+    output_name: figure3_community_balance
+    legacy_design_source: figure2
+    width_in: 7.2
+    height_in: 6.6
+    panels: [a, b, c, d, e]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figure4
+    order: 4
+    title: Age distribution and public-health balance
+    conclusion: The age distribution of modelled non-EV-A71 excess is compared with baseline burden and age-specific EV-A71 benefit across defensible exposure structures.
+    evidence_logic:
+      - Decompose the absolute non-EV-A71 contrast by registered age groups.
+      - Compare additional-case shares with factual burden shares.
+      - Standardize additional cases to age-specific factual non-EV-A71 burden.
+      - Display contact and susceptibility structural sensitivity.
+      - Close with benefit retained and net all-pathogen balance.
+    archetype: age_decomposition_with_structural_sensitivity_matrix
+    reviewer_risk: Age decomposition is not an identified contact-network pathway and must pass the under-six stability gate before being summarized as concentrated.
+    source_script: Script_r/figures/figure3_age_ecology.R
+    output_name: figure4_age_ecology
+    legacy_design_source: figure3
+    width_in: 7.2
+    height_in: 7.6
+    panels: [a, b, c, d, e, f]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figure5
+    order: 5
+    title: Validation and inferential boundaries
+    conclusion: Candidate support, rolling prediction, profile geometry, structural sensitivity, and mechanism-recovery simulations jointly determine the allowable interpretation.
+    evidence_logic:
+      - Compare paired interaction and no-interaction models under identical alternative-explanation structures.
+      - Display seven rolling-origin joint and component log scores.
+      - Show profile likelihood and parameter-boundary diagnostics.
+      - Contrast conditional and full-state uncertainty.
+      - Report false selection, bias, and coverage in recovery simulations.
+    archetype: evidence_boundary_dashboard_with_validation_hero
+    reviewer_risk: Candidate-set support, calibrated prediction, and boundary-constrained parameters cannot independently identify biological competition release.
+    source_script: Script_r/figures/figure4_evidence_boundaries.R
+    output_name: figure5_evidence_boundaries
+    legacy_design_source: figure4
+    width_in: 7.2
+    height_in: 7.8
+    panels: [a, b, c, d, e, f]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+
+supplementary_figures:
+  - figure_id: figureS1
+    order: 1
+    title: Auditable multiscale workflow
+    conclusion: Restricted-data cleaning, ecological and dynamics estimands, validation, claims, and publication share one manifest-linked workflow.
+    evidence_logic: [Map inputs to normalized contracts, show independent analysis branches, show gated atomic publication.]
+    archetype: workflow_diagram
+    reviewer_risk: A workflow diagram must not imply that distinct estimands were mechanically pooled.
+    source_script: Script_r/figures/figureS1_analytic_workflow.R
+    output_name: figureS1_analytic_workflow
+    legacy_design_source: figureS1
+    width_in: 7.2
+    height_in: 4.8
+    panels: [a]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figureS2
+    order: 2
+    title: Annual in-sample model fit
+    conclusion: Annual fitted burden and pathogen composition expose periods in which model fit is weak.
+    evidence_logic: [Compare observed and fitted annual totals, compare observed and fitted typed composition, retain residual panels.]
+    archetype: annual_fit_small_multiples
+    reviewer_risk: In-sample agreement is not mechanism validation.
+    source_script: Script_r/figures/figureS2_annual_model_fit.R
+    output_name: figureS2_annual_model_fit
+    legacy_design_source: figureS2
+    width_in: 7.2
+    height_in: 5.2
+    panels: [a, b, c]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figureS3
+    order: 3
+    title: Contact matrices and age mixing alternatives
+    conclusion: The four prespecified contact structures span assortative and proportional age mixing assumptions.
+    evidence_logic: [Show each normalized matrix on a common scale, report source and age mapping, compare assortativity summaries.]
+    archetype: aligned_contact_matrix_grid
+    reviewer_risk: Contact inputs are external structural assumptions rather than estimated effects.
+    source_script: Script_r/figures/figureS3_contact_matrix.R
+    output_name: figureS3_contact_matrix
+    legacy_design_source: figureS3
+    width_in: 7.2
+    height_in: 5.0
+    panels: [a, b, c, d]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figureS4
+    order: 4
+    title: Ecological vaccine-exposure proxies
+    conclusion: Vaccine-record and coverage-proxy definitions, alignment, and denominator sensitivity are transparent.
+    evidence_logic: [Show temporal alignment, compare count and rate proxies, expose denominator and rollout-year sensitivity.]
+    archetype: exposure_proxy_diagnostics
+    reviewer_risk: Proxy values are not individual vaccine coverage or vaccine effectiveness.
+    source_script: Script_r/figures/figureS4_vaccine_proxy.R
+    output_name: figureS4_vaccine_proxy
+    legacy_design_source: figureS4
+    width_in: 7.2
+    height_in: 5.0
+    panels: [a, b, c]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figureS5
+    order: 5
+    title: Conditional and full-state bootstrap uncertainty
+    conclusion: Conditional parameter uncertainty and uncertainty from regenerated typing, infection, immunity, and pressure states are not conflated.
+    evidence_logic: [Show conditional bootstrap distributions, show full-state bootstrap distributions, compare endpoint Monte Carlo stability.]
+    archetype: paired_uncertainty_distributions
+    reviewer_risk: Conditional intervals generally understate full pipeline uncertainty.
+    source_script: Script_r/figures/figureS5_bootstrap_estimands.R
+    output_name: figureS5_bootstrap_estimands
+    legacy_design_source: figureS5
+    width_in: 7.2
+    height_in: 5.2
+    panels: [a, b, c, d]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figureS6
+    order: 6
+    title: Pathogen-specific phenology
+    conclusion: Seasonal timing differences are described within pathogen without implying between-pathogen magnitude comparability.
+    evidence_logic: [Show within-pathogen weekly distributions, mark registered phenology summaries, retain typing-effort context.]
+    archetype: pathogen_phenology_small_multiples
+    reviewer_risk: Reconstructed series inherit typing-selection and temporal-borrowing assumptions.
+    source_script: Script_r/figures/figureS6_pathogen_phenology.R
+    output_name: figureS6_pathogen_phenology
+    legacy_design_source: figureS6
+    width_in: 7.2
+    height_in: 4.8
+    panels: [a, b, c]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figureS7
+    order: 7
+    title: Two-stage typing-selection diagnostics
+    conclusion: Testing entry, resolvable typing, positivity, weights, and effective sample size reveal the support for pathogen-composition correction.
+    evidence_logic: [Show stage-one testing probabilities, show stage-two resolvable-result probabilities, display positivity and truncated weights, compare corrected restrictions.]
+    archetype: selection_model_diagnostics
+    reviewer_risk: Weighting cannot recover information in unsupported county-time-age strata.
+    source_script: Script_r/figures/figureS7_typing_diagnostics.R
+    output_name: figureS7_typing_diagnostics
+    legacy_design_source: figureS7
+    width_in: 7.2
+    height_in: 6.0
+    panels: [a, b, c, d, e]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: migrated
+  - figure_id: figureS8
+    order: 8
+    title: Ecological model diagnostics
+    conclusion: Influence, residual, dispersion, fixed-effect support, and specification diagnostics bound county-model interpretation.
+    evidence_logic: [Show residual and dispersion checks, show influential units and sparse outcomes, summarize all 55 registered model statuses.]
+    archetype: ecological_diagnostic_dashboard
+    reviewer_risk: Successful convergence does not remove ecological confounding or denominator uncertainty.
+    source_script: Script_r/figures/figureS8_ecological_diagnostics.R
+    output_name: figureS8_ecological_diagnostics
+    width_in: 7.2
+    height_in: 6.0
+    panels: [a, b, c, d]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: required
+  - figure_id: figureS9
+    order: 9
+    title: Pathogen-pair interaction structures
+    conclusion: Biological interpretation is limited to pathogen pairs with out-of-period support and parameters away from boundaries.
+    evidence_logic: [Compare no-interaction and pair-specific structures, show directional parameters and bounds, show rolling component log scores.]
+    archetype: pathogen_pair_structure_comparison
+    reviewer_risk: The heterogeneous other-enterovirus group is not a single biological pathogen.
+    source_script: Script_r/figures/figureS9_pathogen_pair_structures.R
+    output_name: figureS9_pathogen_pair_structures
+    width_in: 7.2
+    height_in: 5.5
+    panels: [a, b, c, d]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: required
+  - figure_id: figureS10
+    order: 10
+    title: Mechanism-recovery simulations
+    conclusion: False-selection, bias, and coverage performance are measured under null, positive, secular, typing, disturbance, and pair-structure data-generating mechanisms.
+    evidence_logic: [Report null false-selection rate, report positive-mechanism bias and coverage, stratify failures by alternative data-generating mechanism.]
+    archetype: simulation_recovery_operating_characteristics
+    reviewer_risk: Simulation validity is conditional on the declared data-generating mechanisms.
+    source_script: Script_r/figures/figureS10_mechanism_recovery.R
+    output_name: figureS10_mechanism_recovery
+    width_in: 7.2
+    height_in: 5.8
+    panels: [a, b, c, d]
+    export_formats: [pdf, svg, png, tiff]
+    implementation_status: required

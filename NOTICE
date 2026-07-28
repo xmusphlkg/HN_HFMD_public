@@ -1,0 +1,13 @@
+HFMD research platform licensing notice
+
+- Source code, workflow definitions, and machine-readable configuration:
+  BSD-3-Clause.
+- Output produced by `hfmd.data.synthetic`: CC0-1.0.
+- Disclosure-selected aggregate result tables in `public_data/`: CC-BY-4.0.
+- Narrative documentation: CC-BY-4.0.
+- Restricted Hunan data and third-party inputs: not distributed and not
+  relicensed by this repository.
+
+Third-party package and font licenses remain with their respective authors.
+DejaVu Sans is distributed under its own font license and is not relicensed by
+this notice.

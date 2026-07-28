@@ -1,0 +1,76 @@
+schema_version: "1.0.0"
+evaluation_policy:
+  missing_metrics: not_evaluated
+  partial_pass: downgrade
+  rounding: evaluate_unrounded_values
+  publication_rule: A claim may use pass_language only when every declared check passes.
+
+gates:
+  competition_release:
+    label: Competition-release interpretation
+    pass_language: The results support model-defined competition release after typing-selection correction, matched alternative-explanation models, out-of-period validation, and mechanism-recovery checks.
+    downgrade_language: The results show a hypothesis-generating signal consistent with competition release, but secular change and typing selection cannot be excluded.
+    not_evaluated_language: Competition release is not a supported conclusion because one or more prespecified decision metrics are unavailable.
+    checks:
+      - check_id: selection_analyses_direction_consistent
+        metric: competition_release.selection_analyses_direction_consistent
+        operator: eq
+        value: true
+        evidence_required: Unadjusted, selection-corrected, non-severe, and adequately typed restrictions
+      - check_id: m2_joint_log_score_wins_five_of_seven
+        metric: competition_release.rolling_folds.joint_m2_better_count
+        operator: gte
+        value: 5
+        denominator: 7
+      - check_id: total_component_noninferior_four_of_seven
+        metric: competition_release.rolling_folds.total_noninferior_count
+        operator: gte
+        value: 4
+        denominator: 7
+      - check_id: typing_component_noninferior_four_of_seven
+        metric: competition_release.rolling_folds.typing_noninferior_count
+        operator: gte
+        value: 4
+        denominator: 7
+      - check_id: null_false_selection_below_five_percent
+        metric: competition_release.simulations.null_false_selection_rate
+        operator: lt
+        value: 0.05
+      - check_id: positive_mechanism_absolute_bias_below_twenty_percent
+        metric: competition_release.simulations.positive_mechanism_absolute_relative_bias
+        operator: lt
+        value: 0.20
+      - check_id: positive_mechanism_interval_coverage_in_range
+        metric: competition_release.simulations.positive_mechanism_interval_coverage
+        operator: between_inclusive
+        value: [0.90, 0.98]
+      - check_id: interpreted_pathogen_pairs_away_from_bounds
+        metric: competition_release.interpreted_pairs.all_parameters_away_from_boundaries
+        operator: eq
+        value: true
+
+  under_six_concentration:
+    label: Concentration of modelled additional non-EV-A71 cases below six years
+    pass_language: Modelled additional non-EV-A71 cases were concentrated among children younger than six years across all defensible contact and susceptibility structures.
+    downgrade_language: The modelled additional non-EV-A71 cases are reported as an age decomposition; concentration below six years was not structurally stable.
+    not_evaluated_language: Only the age decomposition is reported because the full set of defensible age structures has not been evaluated.
+    checks:
+      - check_id: every_defensible_structure_at_least_eighty_percent
+        metric: under_six_concentration.shares_across_defensible_structures
+        operator: all_gte
+        value: 0.80
+
+  net_benefit:
+    label: Stable net all-pathogen public-health benefit
+    pass_language: The modelled net all-pathogen benefit remained positive across all major equivalent models and full-state uncertainty.
+    downgrade_language: Net benefit is reported as model conditional because positivity was not stable across all major equivalent models and full-state uncertainty.
+    not_evaluated_language: Net benefit is not characterized as stable because required equivalent-model or full-state uncertainty results are unavailable.
+    checks:
+      - check_id: all_major_equivalent_model_estimates_positive
+        metric: net_benefit.estimates_across_major_equivalent_models
+        operator: all_gt
+        value: 0
+      - check_id: full_state_interval_lower_bound_positive
+        metric: net_benefit.full_state_interval_lower_bound
+        operator: gt
+        value: 0
