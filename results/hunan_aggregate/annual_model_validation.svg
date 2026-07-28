@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title">
+<title id="title">Annual out-of-period model comparison</title>
+<rect width="1000" height="560" fill="#FFFFFF"/>
+<text x="100.00" y="40.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="bold" fill="#263238">Annual out-of-period model comparison</text>
+<text x="100.00" y="68.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#546E7A">Positive composite-index differences favour M2; negative values favour M1.</text>
+<line x1="100" y1="475.00" x2="960" y2="475.00" stroke="#E6EAED" stroke-width="1"/>
+<text x="88.00" y="480.00" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">-80</text>
+<line x1="100" y1="427.50" x2="960" y2="427.50" stroke="#E6EAED" stroke-width="1"/>
+<text x="88.00" y="432.50" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">-60</text>
+<line x1="100" y1="380.00" x2="960" y2="380.00" stroke="#E6EAED" stroke-width="1"/>
+<text x="88.00" y="385.00" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">-40</text>
+<line x1="100" y1="332.50" x2="960" y2="332.50" stroke="#E6EAED" stroke-width="1"/>
+<text x="88.00" y="337.50" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">-20</text>
+<line x1="100" y1="285.00" x2="960" y2="285.00" stroke="#455A64" stroke-width="2"/>
+<text x="88.00" y="290.00" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">0</text>
+<line x1="100" y1="237.50" x2="960" y2="237.50" stroke="#E6EAED" stroke-width="1"/>
+<text x="88.00" y="242.50" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">20</text>
+<line x1="100" y1="190.00" x2="960" y2="190.00" stroke="#E6EAED" stroke-width="1"/>
+<text x="88.00" y="195.00" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">40</text>
+<line x1="100" y1="142.50" x2="960" y2="142.50" stroke="#E6EAED" stroke-width="1"/>
+<text x="88.00" y="147.50" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">60</text>
+<line x1="100" y1="95.00" x2="960" y2="95.00" stroke="#E6EAED" stroke-width="1"/>
+<text x="88.00" y="100.00" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">80</text>
+<rect x="136.43" y="237.30" width="50" height="47.70" fill="#3B6FB6"/>
+<text x="161.43" y="228.30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#3B6FB6">20.1</text>
+<text x="161.43" y="502.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">2019</text>
+<rect x="259.29" y="180.16" width="50" height="104.84" fill="#3B6FB6"/>
+<text x="284.29" y="171.16" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#3B6FB6">44.1</text>
+<text x="284.29" y="502.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">2020</text>
+<rect x="382.14" y="232.99" width="50" height="52.01" fill="#3B6FB6"/>
+<text x="407.14" y="223.99" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#3B6FB6">21.9</text>
+<text x="407.14" y="502.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">2021</text>
+<rect x="505.00" y="285.00" width="50" height="25.61" fill="#D95F5F"/>
+<text x="530.00" y="330.61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#D95F5F">-10.8</text>
+<text x="530.00" y="502.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">2022</text>
+<rect x="627.86" y="285.00" width="50" height="139.89" fill="#D95F5F"/>
+<text x="652.86" y="444.89" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#D95F5F">-58.9</text>
+<text x="652.86" y="502.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">2023</text>
+<rect x="750.71" y="126.16" width="50" height="158.84" fill="#3B6FB6"/>
+<text x="775.71" y="117.16" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#3B6FB6">66.9</text>
+<text x="775.71" y="502.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">2024</text>
+<rect x="873.57" y="178.99" width="50" height="106.01" fill="#3B6FB6"/>
+<text x="898.57" y="169.99" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#3B6FB6">44.6</text>
+<text x="898.57" y="502.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#263238">2025</text>
+</svg>

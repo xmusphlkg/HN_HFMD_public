@@ -1,44 +1,4 @@
-# Secrets and local configuration
-.env
-.env.*
-!.env.example
-
-# Python and R environments
-.venv/
-venv/
-.r_library/
 __pycache__/
-*.py[cod]
-*.so
-.Rhistory
-.RData
-.Ruserdata
-
-# Local caches and runtime state
-.runs/
-.snakemake/
-artifacts/
-dist/
-.coverage
-.coverage.*
-coverage.xml
-htmlcov/
-.pytest_cache/
-.ruff_cache/
-.population_cache/
-.weather_cache/
-.socioeconomic_cache/
-*.lock
-!uv.lock
-!Script_r/renv.lock
-
-# Restricted source data and reproducible analysis outputs
-AnalysisData/restricted/
-
-# Editor and operating-system files
 .DS_Store
-.idea/
-.vscode/
-.Rproj.user
-
-Data/
+.venv/
+results.tmp/

@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "contact_matrix.csv",
+      "sha256": "a6907bb918f1495bafdf6d11b1e541285abe70ea9814baf08e67fba4cb6f79be"
+    },
+    {
+      "path": "region_metadata.csv",
+      "sha256": "d1dba32f4deda6c7893692007ae270ddd50f69ba3b6858929fec0ae4421ada95"
+    },
+    {
+      "path": "typing_selection.csv",
+      "sha256": "02d92b21d97aee5b20212757f9c94614c62be704002194c5e1ef4d566e62690e"
+    },
+    {
+      "path": "weekly_surveillance.csv",
+      "sha256": "e72a9f8729efe9764ca5d65f02b466c809b57997b097df910ff2d59b3895a68c"
+    }
+  ],
+  "generator_seed": 20260714,
+  "licence": "CC0-1.0",
+  "provenance": "fully synthetic; not derived from restricted Hunan records",
+  "schema_version": 1
+}

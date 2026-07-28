@@ -1,8 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the associated article and this software release."
-title: "Multiscale HFMD research platform"
-type: software
-version: 0.1.0
+message: "If you use these data or scripts, please cite the associated article and this release."
+title: "Hunan HFMD: reproducible data, scripts and results"
+type: dataset
+version: 0.2.0
 date-released: 2026-07-28
 license: BSD-3-Clause
 authors:

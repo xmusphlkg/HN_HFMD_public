@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="510" viewBox="0 0 1060 510" role="img" aria-labelledby="title">
+<title id="title">Reported-case and recorded-severe burden contrasts</title>
+<rect width="1060" height="510" fill="#FFFFFF"/>
+<text x="60.00" y="40.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="bold" fill="#263238">Reported-case and recorded-severe burden contrasts</text>
+<text x="60.00" y="68.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#546E7A">Points are estimates; lines are hierarchical moving-block 95% intervals.</text>
+<text x="80.00" y="112.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#263238">Reported cases per year</text>
+<line x1="80.00" y1="140" x2="80.00" y2="390" stroke="#E6EAED" stroke-width="1"/>
+<text x="80.00" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">-70,000</text>
+<line x1="192.50" y1="140" x2="192.50" y2="390" stroke="#E6EAED" stroke-width="1"/>
+<text x="192.50" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">-35,000</text>
+<line x1="305.00" y1="140" x2="305.00" y2="390" stroke="#455A64" stroke-width="2"/>
+<text x="305.00" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">0</text>
+<line x1="417.50" y1="140" x2="417.50" y2="390" stroke="#E6EAED" stroke-width="1"/>
+<text x="417.50" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">35,000</text>
+<line x1="530.00" y1="140" x2="530.00" y2="390" stroke="#E6EAED" stroke-width="1"/>
+<text x="530.00" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">70,000</text>
+<text x="80.00" y="182.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#263238">EV-A71</text>
+<line x1="107.75" y1="210" x2="359.43" y2="210" stroke="#3B6FB6" stroke-width="5" stroke-linecap="round"/>
+<circle cx="236.80" cy="210" r="8" fill="#3B6FB6" stroke="#FFFFFF" stroke-width="2"/>
+<text x="80.00" y="238.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#546E7A">-21,218 (-61,366 to 16,932)</text>
+<text x="80.00" y="292.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#263238">Non-EV-A71</text>
+<line x1="210.11" y1="320" x2="505.91" y2="320" stroke="#E69F00" stroke-width="5" stroke-linecap="round"/>
+<circle cx="353.46" cy="320" r="8" fill="#E69F00" stroke="#FFFFFF" stroke-width="2"/>
+<text x="80.00" y="348.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#546E7A">15,076 (-29,520 to 62,504)</text>
+<text x="590.00" y="112.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#263238">Recorded severe cases per year</text>
+<line x1="590.00" y1="140" x2="590.00" y2="390" stroke="#E6EAED" stroke-width="1"/>
+<text x="590.00" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">-1,200</text>
+<line x1="702.50" y1="140" x2="702.50" y2="390" stroke="#E6EAED" stroke-width="1"/>
+<text x="702.50" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">-600</text>
+<line x1="815.00" y1="140" x2="815.00" y2="390" stroke="#455A64" stroke-width="2"/>
+<text x="815.00" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">0</text>
+<line x1="927.50" y1="140" x2="927.50" y2="390" stroke="#E6EAED" stroke-width="1"/>
+<text x="927.50" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">600</text>
+<line x1="1040.00" y1="140" x2="1040.00" y2="390" stroke="#E6EAED" stroke-width="1"/>
+<text x="1040.00" y="420.00" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="normal" fill="#263238">1,200</text>
+<text x="590.00" y="182.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#263238">EV-A71</text>
+<line x1="597.79" y1="210" x2="810.59" y2="210" stroke="#3B6FB6" stroke-width="5" stroke-linecap="round"/>
+<circle cx="729.07" cy="210" r="8" fill="#3B6FB6" stroke="#FFFFFF" stroke-width="2"/>
+<text x="590.00" y="238.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#546E7A">-458 (-1,158 to -24)</text>
+<text x="590.00" y="292.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#263238">Non-EV-A71</text>
+<line x1="731.33" y1="320" x2="866.91" y2="320" stroke="#E69F00" stroke-width="5" stroke-linecap="round"/>
+<circle cx="803.32" cy="320" r="8" fill="#E69F00" stroke="#FFFFFF" stroke-width="2"/>
+<text x="590.00" y="348.00" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" fill="#546E7A">-62 (-446 to 277)</text>
+</svg>
