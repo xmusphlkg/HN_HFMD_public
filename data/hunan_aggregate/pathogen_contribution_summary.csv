@@ -1,0 +1,5 @@
+component,point_ensemble,q025,median,q975,interpretation
+EV-A71 reduction,26568.490695540633,21576.3013234237,27466.1595464886,33454.1303039016,Positive values favour the model-defined vaccination history
+CV-A16 contribution,-4371.5139467132549,-10639.2454807909,-4102.44077672462,0,Negative values are added cases that offset the target-pathogen reduction
+Other-enterovirus contribution,0,-3612.75221024625,0,8390.54615956693,Negative values are added cases and positive values strengthen net benefit
+Net benefit,22196.976748827379,14873.2111129781,22627.1391739416,36344.0756880971,Positive values favour the model-defined vaccination history

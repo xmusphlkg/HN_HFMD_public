@@ -2,10 +2,11 @@
 
 ## `hunan_aggregate/`
 
-Seven disclosure-approved aggregate tables support inspection of the study's
+Ten disclosure-approved aggregate tables support inspection of the study's
 principal findings. They contain no individual records, exact dates,
-county/city identifiers, small-area exposure series, bootstrap replicates or
-fitted unit-level panels.
+county/city identifiers, small-area exposure series, draw-level outputs,
+bootstrap replicates, candidate member files, internal receipts or fitted
+unit-level panels.
 
 These tables support result-level verification and public re-plotting, not
 independent re-estimation of the restricted surveillance analysis. Field

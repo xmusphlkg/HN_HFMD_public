@@ -51,10 +51,12 @@ Input and output SHA-256 digests are recorded in the data and result manifests.
 
 ## Data scope
 
-The files in `data/hunan_aggregate/` are province-level or model-summary tables
-approved for public release. They support verification and re-plotting of the
-reported findings, but they do not permit re-estimation of the restricted
-record-level analysis.
+The ten files in `data/hunan_aggregate/` are province-level or model-summary
+tables approved for public release. They include the model-averaged net-benefit
+summary, signed pathogen contributions, predictive weights, age and
+compensation stress analyses, and a summary-only recorded-severe comparison.
+They support verification and re-plotting of the reported findings, but they do
+not permit re-estimation of the restricted record-level analysis.
 
 The files in `data/synthetic/` describe fictional regions and were generated
 deterministically. They are not masked, perturbed or resampled Hunan records.
@@ -62,7 +64,8 @@ Their purpose is to demonstrate the complete public computation from input data
 to results.
 
 Individual records, exact dates, small-area identifiers, vaccination records,
-fitted unit-level panels and bootstrap replicates are not distributed.
+fitted unit-level panels, draw-level outputs, bootstrap replicates, candidate
+member files and internal analysis receipts are not distributed.
 
 ## Licence and citation
 

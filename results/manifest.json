@@ -2,6 +2,10 @@
   "command": "python3 scripts/reproduce.py",
   "inputs": [
     {
+      "path": "data/hunan_aggregate/age_offset_sensitivity_summary.csv",
+      "sha256": "9a4023cc479b0b71f27c1a2da9bc0d83163cf459e8ee16ac1311548954b6ebf9"
+    },
+    {
       "path": "data/hunan_aggregate/annual_model_validation.csv",
       "sha256": "963bcf1924126864ecc636910a44607d89833fdd883ccd87c6139ce25d54d7fe"
     },
@@ -10,12 +14,12 @@
       "sha256": "9f843b9b6ffccded720f8838429e909b0c34f38240a88dae4d9c28c111886970"
     },
     {
-      "path": "data/hunan_aggregate/model_conditional_balance.csv",
-      "sha256": "64baa73554af24f0d36ff9e691c3d73af23b4029a9a0052bb24f07f1ee361cac"
+      "path": "data/hunan_aggregate/net_benefit_q05_surface.csv",
+      "sha256": "b2b08c3cf3fc2b6df035dcdbd3b8bd153e29967d1bbc60c8b95d81e66b34a981"
     },
     {
-      "path": "data/hunan_aggregate/model_conditional_balance_by_age.csv",
-      "sha256": "9f8d2b6d72bf8c096842b686da4b3abd5410b5ac9978253a7acfdf1181830aa7"
+      "path": "data/hunan_aggregate/net_benefit_summary.csv",
+      "sha256": "086e5e104a82703b7c0e51a76c7d29962daf5a7bd7f8b408661a033cd7f9cb17"
     },
     {
       "path": "data/hunan_aggregate/observation_adjustment_summary.csv",
@@ -26,8 +30,16 @@
       "sha256": "eb99e376fa1b4504772cdc6ae241d5b8be7da5e7bf93405e6e58be5a684a627c"
     },
     {
-      "path": "data/hunan_aggregate/structural_sensitivity_summary.csv",
-      "sha256": "4b5d5ea78f19dfe17f2c8c5b2c248498cf35570e6b12be13bc8b092d18d8d58f"
+      "path": "data/hunan_aggregate/pathogen_contribution_summary.csv",
+      "sha256": "14c1dbcc40b61b661a0338e9947b469444c4e002b220ac5f5b15ee602858a7a6"
+    },
+    {
+      "path": "data/hunan_aggregate/predictive_weight_summary.csv",
+      "sha256": "c27a0b679fb3fa79f80ffe90d34bb5cfaaff291fd6fa264752e60b352d207894"
+    },
+    {
+      "path": "data/hunan_aggregate/recorded_severe_period_summary.csv",
+      "sha256": "16afb829647be5c101f13ba2720cfb0e5b7aab3387e87b52903abfde25bd7947"
     },
     {
       "path": "data/synthetic/contact_matrix.csv",
@@ -49,7 +61,7 @@
   "outputs": [
     {
       "path": "README.md",
-      "sha256": "dc5018a29601c39567319b4ad5c36c71d6033afbef17836cad2c8103895aab27"
+      "sha256": "c89ab437068fd9bf62f041532948bafd3dcdcfcf4cb586a88c550d2e1aa9f171"
     },
     {
       "path": "hunan_aggregate/annual_model_validation.svg",
@@ -61,7 +73,11 @@
     },
     {
       "path": "hunan_aggregate/key_findings.csv",
-      "sha256": "01e14e009086fc5e363c6673580d47436a5fbf039bfea5acb778313fb460a647"
+      "sha256": "fb1a4267263f65bf51b74782f5c870bc354d98a9088e861362bcc571d6a351cc"
+    },
+    {
+      "path": "hunan_aggregate/net_benefit_ensemble.svg",
+      "sha256": "d4c3b9b1ff60bd7add8f007501e67fac70c35f629057e75532e16e19e6bb8a2e"
     },
     {
       "path": "hunan_aggregate/pathogen_composition.svg",

@@ -344,16 +344,117 @@ def burden_contrasts_svg(rows: Sequence[Mapping[str, str]]) -> str:
     return svg_document(width, height, "Reported-case and recorded-severe burden contrasts", body)
 
 
+def net_benefit_svg(
+    rows: Sequence[Mapping[str, str]],
+    summary_rows: Sequence[Mapping[str, str]],
+) -> str:
+    width, height = 1000, 570
+    left, right, top, bottom = 285, 55, 120, 105
+    plot_width = width - left - right
+    plot_height = height - top - bottom
+    x_min, x_max = -15000.0, 40000.0
+    colours = {
+        "EV-A71 reduction": "#3B6FB6",
+        "CV-A16 contribution": "#E69F00",
+        "Other-enterovirus contribution": "#5AAE61",
+        "Net benefit": "#17324D",
+    }
+
+    def x_position(value: float) -> float:
+        return left + plot_width * (value - x_min) / (x_max - x_min)
+
+    all_age = next(row for row in summary_rows if row["scope"] == "all_ages")
+    body = [
+        svg_text(left, 40, "Model-averaged reported-case net benefit, 2017–2025", size=24, weight="bold"),
+        svg_text(
+            left,
+            70,
+            "Signed cumulative contributions; points are medians and lines are central 95% model-ensemble intervals.",
+            size=14,
+            fill="#546E7A",
+        ),
+    ]
+    for tick in range(-10000, 40001, 10000):
+        x = x_position(float(tick))
+        body.append(
+            f'<line x1="{x:.2f}" y1="{top}" x2="{x:.2f}" y2="{top+plot_height}" '
+            f'stroke="{"#455A64" if tick == 0 else "#E6EAED"}" '
+            f'stroke-width="{"2" if tick == 0 else "1"}"/>'
+        )
+        body.append(svg_text(x, top + plot_height + 27, f"{tick:,}", anchor="middle", size=12))
+
+    row_gap = plot_height / len(rows)
+    for index, row in enumerate(rows):
+        y = top + row_gap * (index + 0.5)
+        lower = parse_number(row["q025"])
+        median = parse_number(row["median"])
+        upper = parse_number(row["q975"])
+        colour = colours[row["component"]]
+        body.append(
+            svg_text(left - 18, y + 5, row["component"], anchor="end", size=13, weight="bold")
+        )
+        body.append(
+            f'<line x1="{x_position(lower):.2f}" y1="{y:.2f}" '
+            f'x2="{x_position(upper):.2f}" y2="{y:.2f}" stroke="{colour}" '
+            'stroke-width="6" stroke-linecap="round"/>'
+        )
+        body.append(
+            f'<circle cx="{x_position(median):.2f}" cy="{y:.2f}" r="8" '
+            f'fill="{colour}" stroke="#FFFFFF" stroke-width="2"/>'
+        )
+        body.append(
+            svg_text(
+                x_position(median),
+                y + 27,
+                f"{median:,.0f} ({lower:,.0f} to {upper:,.0f})",
+                size=11,
+                anchor="middle",
+                fill="#546E7A",
+            )
+        )
+
+    body.append(
+        svg_text(
+            left + plot_width / 2,
+            height - 44,
+            "Signed reported-case contrast (positive values favour the vaccination history)",
+            anchor="middle",
+            size=13,
+            weight="bold",
+        )
+    )
+    body.append(
+        svg_text(
+            left,
+            height - 14,
+            (
+                f"Net-benefit q05 = {parse_number(all_age['delta_q05']):,.0f}; "
+                f"P(net benefit > 0) = {parse_number(all_age['probability_delta_gt_zero']):.3f}; "
+                f"{int(parse_number(all_age['draw_count'])):,} formal draws."
+            ),
+            size=12,
+            fill="#546E7A",
+        )
+    )
+    return svg_document(width, height, "Model-averaged reported-case net benefit", body)
+
+
 def reproduce_hunan(destination: Path) -> None:
     observation = read_csv(HUNAN_DATA / "observation_adjustment_summary.csv")
     composition = read_csv(HUNAN_DATA / "pathogen_composition_by_period.csv")
-    balance = read_csv(HUNAN_DATA / "model_conditional_balance.csv")
+    net_benefit = read_csv(HUNAN_DATA / "net_benefit_summary.csv")
+    contributions = read_csv(HUNAN_DATA / "pathogen_contribution_summary.csv")
+    predictive_weights = read_csv(HUNAN_DATA / "predictive_weight_summary.csv")
+    recorded_severe = read_csv(HUNAN_DATA / "recorded_severe_period_summary.csv")
     validation = read_csv(HUNAN_DATA / "annual_model_validation.csv")
     burden = read_csv(HUNAN_DATA / "case_severity_burden_summary.csv")
 
     observation_by_metric = {row["metric"]: row for row in observation}
     composition_by_period = {row["Epidemiological period"]: row for row in composition}
-    balance_by_estimand = {row["Public-health estimand"]: row for row in balance}
+    net_benefit_by_scope = {row["scope"]: row for row in net_benefit}
+    contribution_by_name = {row["component"]: row for row in contributions}
+    weight_by_name = {row["quantity"]: row for row in predictive_weights}
+    severe_by_role = {row["analysis_role"]: row for row in recorded_severe}
     burden_by_metric = {
         (row["outcome"], row["metric"]): row
         for row in burden
@@ -397,12 +498,76 @@ def reproduce_hunan(destination: Path) -> None:
             "source": "pathogen_composition_by_period.csv",
         },
         {
-            "finding": "model_conditional_net_reduction",
-            "value": balance_by_estimand[
-                "Net all-pathogen reported-case-proxy reduction"
-            ]["Point estimate"].replace(",", ""),
+            "finding": "net_benefit_point_ensemble",
+            "value": net_benefit_by_scope["all_ages"]["point_ensemble"],
             "unit": "reported-case proxies",
-            "source": "model_conditional_balance.csv",
+            "source": "net_benefit_summary.csv",
+        },
+        {
+            "finding": "net_benefit_ensemble_median",
+            "value": net_benefit_by_scope["all_ages"]["delta_median"],
+            "unit": "reported-case proxies",
+            "source": "net_benefit_summary.csv",
+        },
+        {
+            "finding": "net_benefit_q05",
+            "value": net_benefit_by_scope["all_ages"]["delta_q05"],
+            "unit": "reported-case proxies",
+            "source": "net_benefit_summary.csv",
+        },
+        {
+            "finding": "net_benefit_positive_draw_fraction",
+            "value": net_benefit_by_scope["all_ages"]["probability_delta_gt_zero"],
+            "unit": "fraction",
+            "source": "net_benefit_summary.csv",
+        },
+        {
+            "finding": "ev_a71_reduction_ensemble_median",
+            "value": contribution_by_name["EV-A71 reduction"]["median"],
+            "unit": "reported-case proxies",
+            "source": "pathogen_contribution_summary.csv",
+        },
+        {
+            "finding": "cv_a16_added_case_ensemble_median",
+            "value": format(
+                -parse_number(contribution_by_name["CV-A16 contribution"]["median"]),
+                ".12g",
+            ),
+            "unit": "reported-case proxies",
+            "source": "pathogen_contribution_summary.csv",
+        },
+        {
+            "finding": "retained_ev_a71_reduction_median",
+            "value": format(
+                100 * parse_number(net_benefit_by_scope["all_ages"]["retained_ratio_median"]),
+                ".12g",
+            ),
+            "unit": "percent",
+            "source": "net_benefit_summary.csv",
+        },
+        {
+            "finding": "cv_a16_path_inclusion_weight",
+            "value": weight_by_name["CV-A16 path included"]["point_estimate"],
+            "unit": "predictive weight",
+            "source": "predictive_weight_summary.csv",
+        },
+        {
+            "finding": "other_enterovirus_path_inclusion_weight",
+            "value": weight_by_name["Other-enterovirus path included"]["point_estimate"],
+            "unit": "predictive weight",
+            "source": "predictive_weight_summary.csv",
+        },
+        {
+            "finding": "recorded_severe_primary_median_reduction",
+            "value": severe_by_role["primary"]["bootstrap_median"],
+            "unit": "recorded severe cases/year",
+            "source": "recorded_severe_period_summary.csv",
+        },
+        {
+            "finding": "recorded_severe_primary_positive_fraction",
+            "value": severe_by_role["primary"]["positive_replicate_fraction"],
+            "unit": "fraction",
+            "source": "recorded_severe_period_summary.csv",
         },
         {
             "finding": "annual_validation_years_favouring_m2",
@@ -450,6 +615,10 @@ def reproduce_hunan(destination: Path) -> None:
     )
     write_text(destination / "annual_model_validation.svg", annual_validation_svg(validation))
     write_text(destination / "case_severity_contrasts.svg", burden_contrasts_svg(burden))
+    write_text(
+        destination / "net_benefit_ensemble.svg",
+        net_benefit_svg(contributions, net_benefit),
+    )
 
 
 def reproduce_synthetic(destination: Path) -> None:
@@ -619,7 +788,7 @@ Everything in this directory is generated by:
 python3 scripts/reproduce.py
 ```
 
-- `hunan_aggregate/` contains a key-finding table and three SVGs reproduced
+- `hunan_aggregate/` contains a key-finding table and four SVGs reproduced
   from the disclosure-approved aggregate Hunan tables.
 - `synthetic/` contains annual summaries, rolling-origin validation and one SVG
   generated from fictional deterministic records.

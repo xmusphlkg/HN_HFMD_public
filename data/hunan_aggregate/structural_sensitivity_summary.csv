@@ -1,7 +1,0 @@
-Scenario family,Analyses,Model-conditional EV-A71 reduction,Model-conditional non-EV-A71 increase,Model-conditional net balance,Net positive,Net-balance exception
-Core structural and measurement analyses,38,"10,826.2–681,366.8","0.0–21,187.5","587.1–673,314.7",38/38,None
-Age-susceptibility structures,3,"16,735.5–18,197.1","7,835.7–8,943.7","8,855.2–9,253.4",3/3,None
-Vaccine-exposure structures,3,"7,285.3–26,940.6","10,810.7–16,559.8","-3,525.4–10,380.8",2/3,Vaccine exposure restricted to ages <3 years
-Alternative fit windows,2,"26,263.2–28,713.8","16,179.8–17,317.5","8,945.7–12,534.0",2/2,None
-Initial-immunity structures,2,"24,799.9–25,641.6","15,311.9–16,410.0","9,231.6–9,488.0",2/2,None
-Additional duration structure,1,"19,488.0–19,488.0","3,359.2–3,359.2","16,128.8–16,128.8",1/1,None

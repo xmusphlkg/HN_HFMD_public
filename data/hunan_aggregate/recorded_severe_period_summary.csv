@@ -1,0 +1,4 @@
+comparison,analysis_role,comparison_label,bootstrap_median,central_95_lower,central_95_upper,positive_replicate_fraction,n_bootstrap,unit,interpretation
+preguideline_2013_15_vs_2017_2018jul,primary,2013-2015 vs 2017-Jul 2018,466.01150412088,-203.345077266484,1567.32638221154,0.8715,2000,recorded_severe_cases_per_year,Descriptive surveillance-period reduction; not a vaccination counterfactual
+preguideline_2010_15_vs_2017_2018jul,sensitivity,2010-2015 vs 2017-Jul 2018,802.964663461539,-41.8331662087913,2056.19712409937,0.9665,2000,recorded_severe_cases_per_year,Definition-aligned longer-reference sensitivity; not a vaccination counterfactual
+strict_2013_15_vs_2017,sensitivity,2013-2015 vs calendar 2017,399.199519230769,-293.696789148351,1565.11464629121,0.825,2000,recorded_severe_cases_per_year,Definition-aligned shorter-recent-period sensitivity; not a vaccination counterfactual
