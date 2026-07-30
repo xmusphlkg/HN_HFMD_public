@@ -2,9 +2,8 @@
 
 This repository accompanies the study:
 
-> *Pathogen community reorganization in hand, foot and mouth disease after
-> EV-A71 vaccine introduction in Hunan, China: an observation-adjusted
-> surveillance and modelling study*
+> *Pathogen redistribution and syndrome-level HFMD burden after EV-A71 vaccine
+> introduction in Hunan, China*
 
 It contains the public data, analysis script and generated results needed to
 inspect the released findings without exposing restricted surveillance
